@@ -1,7 +1,14 @@
 <h1>
-  {{title}}
+    {{title}}
 </h1>
 <app-string-interpolation></app-string-interpolation>
 <app-property-binding></app-property-binding>
 <app-component-property-binding [result]="2048"></app-component-property-binding>
 <app-event-binding></app-event-binding>
+<app-two-way-binding></app-two-way-binding>
+<app-lifecycle [bindable]="bindValue" *ngIf="!delete">
+    <p #boundContent>{{test}}</p>
+</app-lifecycle>
+<button (click)="delete=true">destory lifecycle</button>
+<button (click)="test='changed value'">change test value</button>
+<button (click)="bindValue=bindValue+1">change bindable</button>

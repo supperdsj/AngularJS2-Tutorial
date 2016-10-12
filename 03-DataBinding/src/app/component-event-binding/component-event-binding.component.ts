@@ -11,7 +11,9 @@ export class ComponentEventBindingComponent implements OnInit {
 
   ngOnInit() {
   }
-  @Output() clicked=new EventEmitter<string>();
+  //缺省使用变量名作为eventName
+  // @Output() clicked=new EventEmitter<string>();
+  @Output('componentEventClicked') clicked=new EventEmitter<string>();
   onClicked(){
     this.clicked.emit('component event binding worked');
   }

@@ -1,0 +1,7 @@
+<p>
+    lifecycle works!
+    <ng-content></ng-content>
+</p>
+<p #boundParagraph>bindable:{{bindable}}</p>
+<p>{{boundParagraph.textContent}}</p>
+<!--#为HTMLElement的引用，如在Component内使用需要声明，可使用ContentChild和ViewChild-->

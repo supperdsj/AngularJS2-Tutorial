@@ -14,4 +14,7 @@ export class EventBindingComponent implements OnInit {
   onClicked(){
     alert('click worked');
   }
+  triggerComponentEvent(value:string){
+    alert(value);
+  }
 }
