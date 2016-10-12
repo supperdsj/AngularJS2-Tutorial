@@ -3,15 +3,14 @@ import {Component, OnInit} from '@angular/core';
 @Component({
   selector: 'app-ng-content',
   template: `
-    <p>
-      ng-content Works!
+<p>
+    ng-content Works!
     <ng-content></ng-content>
-    </p>
-    
+</p>
   `,
   styles: [`
-p{
-border: 1px solid red;
+p {
+    border: 1px solid red;
 }
 `]
 })

@@ -1,0 +1,17 @@
+<p>
+  property-binding works!
+</p>
+<input type="text" value="{{inputValue}}">
+<input type="text" [value]="inputValue">
+<p [ngClass]="{redBorder:true}">
+  ng-Class redBorder:true
+</p>
+<p [ngClass]="{redBorder:false}">
+  ng-Class redBorder:false
+</p>
+<p [ngClass]="{redBorder:onTest()}">
+  ng-Class redBorder:onTest()
+</p>
+<p [ngStyle]="{color:'green'}">
+  ng-Style color:'green'
+</p>
