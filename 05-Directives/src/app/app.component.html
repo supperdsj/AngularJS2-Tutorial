@@ -1,0 +1,57 @@
+<h1>
+  Attribute Directives
+</h1>
+<h2>ngClass / ngStyle</h2>
+<div [ngClass]="{border: false,background:true}"></div>
+<div [class.border]="true"></div>
+<div [ngStyle]="{'background-color': 'yellow'}"></div>
+
+<hr>
+
+<h2>Custom Attribute Directive</h2>
+<div dirHighlight>highlight Directive</div>
+<div dirClickEvent>clickEvent Directive</div>
+<div dirInputArrValue [defaultColor]="'yellow'" [highlightColor]="'green'">highlight Directive with Attribute Input
+</div>
+
+<hr>
+
+<h2>Structural Directives</h2>
+
+<h3>*ngIf</h3>
+<button (click)="onShowChange()">Switch Show</button>
+<h4 *ngIf="isShow">Conditional Text</h4>
+<!--<template [ngIf]="isShow">-->
+<!--<h4>-->
+<!--Conditional Text-->
+<!--</h4>-->
+<!--</template>-->
+
+<h3>*ngFor</h3>
+<button (click)="onPush()">Push</button>
+<ul>
+  <li *ngFor="let item of items;let i = index">{{item}} - (Index:{{ i }})</li>
+</ul>
+
+<h3>*ngSwitch</h3>
+<button (click)="onSwitchChange()">Switch Add</button>
+<h4 [ngSwitch]="switchValue">
+  <span *ngSwitchCase="1">1</span>
+  <span *ngSwitchCase="2">2</span>
+  <span *ngSwitchDefault>default</span>
+</h4>
+<!--<h4 [ngSwitch]="switchValue">-->
+<!--<template [ngSwitchCase]="1">-->
+<!--<span>1</span>-->
+<!--</template>-->
+<!--<template [ngSwitchCase]="2">-->
+<!--<span>2</span>-->
+<!--</template>-->
+<!--<template ngSwitchDefault>-->
+<!--<span>default</span>-->
+<!--</template>-->
+<!--</h4>-->
+
+<h3>unless Directive (custom)</h3>
+<h4 *dirUnless="isShow">Unless Show</h4>
+<button (click)="onShowChange()">Switch Show</button>
