@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="text/javascript">
+        //是否允许投票全局变量
+        var isQQVerifyDone=true;
+        var isWeixinVerifyDone=true;
+        var isWaitTimeDone=true;
+        var isGetLocationDone=true;
+        var action='Shortcut';
+        var waitTimeBeforeVote = 0;
+
+        var customItemPagePosition = 'AfterVoteTopic';
+        var endDatetimeString = '2016/10/15 12:00:00';
+        var isCountDownEndDatetime = true;
+    </script>
+    <link rel="stylesheet" type="text/css" href="http://static.vote8.cn/JqueryMobile/jquery.mobile-1.4.2.min.css?V=20160824-1" /><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/JqueryMobile/jquery.mobile.themes.min.css?V=20160824-1" /><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Front/Mobile/Style.css?V=20160824-1" /><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Front/Mobile/Layout.css?V=20160824-1" /><script id="j_65c1d59d62a16cfb" src="http://static.vote8.cn/JS/jquery.min.js?V=20160824-1" type="text/javascript"></script><script id="j_96c334d1040792c8" src="http://static.vote8.cn/JqueryMobile/jquery.mobile-1.4.2.min.js?V=20160824-1" type="text/javascript"></script><script id="j_d3fb547849df0f7a" src="http://static.vote8.cn/JS/Front/Mobile/Global.js?V=20160824-1" type="text/javascript"></script><link rel="stylesheet" type="text/css" href="http://static.vote8.cn/Css/Colorbox/Style1/colorbox.css?V=20160824-1" /><script id="j_94836fec59dd8a2c" src="http://static.vote8.cn/JS/UI.js?V=20160824-1" type="text/javascript"></script><script id="j_a683d44247d0f3ea" src="http://static.vote8.cn/JS/jquery.countdown.min.js?V=20160824-1" type="text/javascript"></script><script id="j_0161801fab0a1ed4" src="http://static.vote8.cn/JS/jquery.colorbox-min.js?V=20160824-1" type="text/javascript"></script><script id="j_b82a355d02fb3198" src="http://static.vote8.cn/JS/jquery.json.min.js?V=20160824-1" type="text/javascript"></script><script id="j_9dde4134c334f5fc" src="http://static.vote8.cn/JS/jquery.cookie.js?V=20160824-1" type="text/javascript"></script><script id="j_77652339b47b54f9" src="http://static.vote8.cn/JS/VideoUrl.js?V=20160824-1" type="text/javascript"></script><script id="j_0f6e0755c12bb4b0" src="http://static.vote8.cn/JS/Common.js?V=20160824-1" type="text/javascript"></script><script id="j_5c93bd882dbaba59" src="http://static.vote8.cn/JS/Front/Mobile/Home.js?V=20160824-1" type="text/javascript"></script><script id="j_490d9f5a01f5f955" src="http://static.vote8.cn/JS/jquery.lazyload.min.js?V=20160824-1" type="text/javascript"></script><script id="j_ace79f8d5cbf4c60" src="http://static.vote8.cn/JS/imagesloaded.pkgd.min.js?V=20160824-1" type="text/javascript"></script><script id="j_6ab29e235942554c" src="http://static.vote8.cn/JS/masonry.pkgd.min.js?V=20160824-1" type="text/javascript"></script><title>
+        北京银行-太库杯中国·北京创新创业大赛季总决赛36进20强项目微信投票
+    </title></head>
+<body>
+
+<form method="post" action="./6131699" id="theform">
+    <div class="aspNetHidden">
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDY3MzczMjQyZGSJuhqKqgIzC0T0JSAeHjMmihWLxA==" />
+    </div>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        var theForm = document.forms['theform'];
+        if (!theForm) {
+            theForm = document.theform;
+        }
+        function __doPostBack(eventTarget, eventArgument) {
+            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                theForm.__EVENTTARGET.value = eventTarget;
+                theForm.__EVENTARGUMENT.value = eventArgument;
+                theForm.submit();
+            }
+        }
+        //]]>
+    </script>
+
+
+    <div class="aspNetHidden">
+
+        <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C9E13C34" />
+    </div>
+
+    <script type="text/javascript">
+        $(document).on("pagecreate", function (event) {
+            var jqThemeName = 'e';
+            $(".ContentField").addClass("ui-body ui-body-" + jqThemeName + " ui-corner-all");
+        });
+    </script>
+
+
+
+
+    <div data-role="page" data-theme='e'>
+
+
+
+
+
+
+
+
+
+
+
+        <div data-role="content">
+
+
+
+
+
+            <div id="content_ucTop_pnlTop" class="AD ADTop TopNoContent">
+
+
+
+
+
+
+            </div>
+
+
+            <div id="content_pnlMain">
+
+
+
+                <div id="content_pnlTimelineStatus" class="TimelineStatus">
+
+
+                    <div id="pnlEndDatetimeClock">
+
+                        离投票结束还有：
+                        <span id="weeks"></span>周
+                        <span id="daysLeft"></span>天
+                        <span id="hours"></span>小时
+                        <span id="minutes"></span>分
+                        <span id="seconds"></span>秒
+
+                    </div>
+
+                </div><div id="content_pnlShortcut" class="ShortcutWrapper ContentField">
+
+                <span>您将投票给：</span>
+                <div>
+                    <img id="content_imgShortcutOption" src="http://cache.vote8.cn/Upload/980886/VoteOptionImage/6131699.jpg?v=13120850452" />
+                    <h4>
+                        团队组-优护家</h4>
+                </div>
+
+            </div><div id="pnlTopicsWrapper">
+
+
+
+                <a name='Topic_2737607'></a>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="clearfloat"></div>
+
+
+
+            </div>
+                <script type="text/javascript">
+                    /***********获取地理位置：开始***********/
+                    var isLocationLimit = false;
+                    var isGetLocationViaBrowser = false;
+                    var isMustGetLocationViaBrowser = false;
+                    var latitude="";
+                    var longitude="";
+
+                    $(function() {
+                        if (isLocationLimit) {
+                            isGetLocationDone = false;
+                            UpdateVoteButtonStatus();
+
+                            //显示等待定位提示
+                            $("#LocationVerifyProcessing").show();
+
+                            if (isGetLocationViaBrowser) {
+                                getLocation();
+                            }
+                            else {
+                                checkIsCurrentCityVoteEnabled();
+                            }
+                        }
+                    });
+
+                    ///检查当前城市是否允许投票
+                    function checkIsCurrentCityVoteEnabled() {
+                        var subjectID = 2768441;
+                        var geoLocationEncode=$("#hiddenGeoLocationEncode").val();
+
+                        $.getJSON("/Front/Ajax/LocationLimitVerify.ashx",
+                                { SubjectID: subjectID, Latitude: latitude, Longitude: longitude,GeoLocationEncode:geoLocationEncode }, function(data){
+                                    var isCurrentCityVoteEnabled = data.IsCurrentCityVoteEnabled;
+                                    if (isCurrentCityVoteEnabled) {
+                                        isGetLocationDone = true;
+                                        UpdateVoteButtonStatus();
+                                        showLocationVerifyResult(data.ReturnMessage,"success");
+                                    }
+                                    else {
+                                        showLocationVerifyResult(data.ReturnMessage,"failure");
+                                    }
+                                    $("#LocationVerifyProcessing").hide();
+                                });
+                    }
+
+                    function getLocation() {
+                        if (navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(savePosition,errorHandle);
+                        }
+                        else {
+                            getGeoLocationError("您当前所用浏览器不支持地理位置定位功能，请升级为更高版本的浏览器。");
+                        }
+                    }
+
+                    //成功获取经纬度
+                    function savePosition(position) {
+                        latitude=position.coords.latitude;
+                        longitude=position.coords.longitude;
+
+                        $.get("/Front/Ajax/EncodeGeoLocation.ashx", { SubjectID: 2768441 , Latitude: latitude, Longitude: longitude },
+                                function(data){
+                                    $("#hiddenGeoLocationEncode").val(data);
+                                    $("#hiddenLatitude").val(latitude);
+                                    $("#hiddenLongitude").val(longitude);
+                                    checkIsCurrentCityVoteEnabled();
+                                });
+                    }
+
+
+                    //获取经纬度失败
+                    function errorHandle(error) {
+                        var reloadHhtml='<a href="javascript:;" onclick="location=location;">[刷新重试]</a>';
+                        switch (error.code) {
+                            case error.PERMISSION_DENIED:
+                                getGeoLocationError( "您拒绝了通过浏览器获取位置。" +reloadHhtml);
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                getGeoLocationError( "无法通过浏览器获取有效位置。" +reloadHhtml);
+                                break;
+                            case error.TIMEOUT:
+                                getGeoLocationError( "通过浏览器获获取位置超时。" +reloadHhtml);
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                getGeoLocationError( "通过浏览器获获取位置信息失败。" +reloadHhtml);
+                                break;
+                        }
+                    }
+
+
+                    //显示当前城市禁止投票信息
+                    function getGeoLocationError(message) {
+                        if (isMustGetLocationViaBrowser) {
+                            showLocationVerifyResult(message,"failure");
+                            $("#LocationVerifyProcessing").hide();
+                        }
+                        else {
+                            checkIsCurrentCityVoteEnabled();
+                        }
+                    }
+
+                    //显示定位相关的错误信息
+                    function showLocationVerifyResult(message,type) {
+                        $("#LocationVerifyResult").show();
+                        $("#LocationVerifyResult").html(message);
+                        var cssName;
+                        switch (type) {
+                            case "failure":
+                                cssName="LocationVerifyFailure";
+                                break;
+                            case "success":
+                                cssName="LocationVerifySuccess";
+                                break;
+
+                        }
+                        $("#LocationVerifyResult").addClass(cssName);
+                    }
+
+                    //提示信息
+                    $(function() {
+                        var message;
+                        if (isGetLocationViaBrowser) {
+                            message='本次投票有地区限制，正在确定您的所在地区，请稍候...<a href="javascript:;" onclick="location=location;">[刷新重试]</a><br />如果浏览器提示请您授权获取地理位置，请点击同意，该信息仅用于判断您是否在允许投票地区。';
+                        }
+                        else {
+                            message='本次投票有地区限制，正在确定您的所在地区，请稍候...<a href="javascript:;" onclick="location=location;">[刷新重试]</a>';
+                        }
+                        $("#LocationVerifyProcessing").html(message);
+                    });
+                    /***********获取地理位置：结束***********/
+                </script>
+                <div id="LocationVerifyProcessing" class="ContentField" style="display: none;">本次投票有地区限制，正在进行定位，请稍候... <a href="javascript:;" onclick="location=location;">[刷新重试]</a></div>
+                <div id="LocationVerifyResult" class="ContentField" style="display: none;"></div>
+                <div id="pnlButtonWrapper" class="ButtonWrapper">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <div id="content_pnlVerifyCode" class="VerifyCode">
+
+                        <div id="geetestCaptcha" class="GeetestCaptcha"></div>
+                        <script src="http://static.geetest.com/static/tools/gt.js"></script>
+                        <script>
+                            var globalIsGeetestOK=false;
+                            var handler = function (captchaObj) {
+                                captchaObj.appendTo("#geetestCaptcha");
+                                captchaObj.onSuccess(function () {globalIsGeetestOK=true;
+                                });
+                            };
+                            $.ajax({
+                                url: "/Front/VerifyCodeImage/Geetest.ashx?GeetestVerifyCodeType=Mobile",
+                                type: "get",
+                                dataType: "json",
+                                success: function (data) {
+                                    initGeetest({
+                                        gt: data.gt,
+                                        challenge: data.challenge,
+                                        product: "embed",
+                                        offline: !data.success
+                                    }, handler);
+                                }
+                            });
+                        </script>
+                        <script type="text/javascript">function IsVerifyCodeInput() {return {verifyResult:globalIsGeetestOK ,isShowAlert:true , alertMessage:'请先通过图形验证码验证。' };}</script>
+
+
+
+                        <input type="hidden" name="ctl00$content$ucVerifyCode$hiddenVerifyCodeModeInfo" id="content_ucVerifyCode_hiddenVerifyCodeModeInfo" value="6,3deedf1901fe7265c4dc1a9affa64e9b" />
+
+
+
+
+
+
+                    </div>
+
+
+                    <a id="lbtnVote" class="VoteButton-a" data-role="button" data-icon="check" data-iconpos="top" href="javascript:__doPostBack(&#39;ctl00$content$lbtnVote&#39;,&#39;&#39;)">投 票！</a>
+
+
+                    <a id="content_hplReturn" class="ReturnButton" data-role="button" data-ajax="false" href="http://y46nn7.v.vote8.cn/m">先看看其他选项</a>
+
+
+                </div>
+
+
+                <div id="content_ucComment_pnlADMiddle" class="AD ADMiddle">
+
+                    <div>
+
+                    </div>
+
+                </div>
+
+                <script type="text/javascript">
+
+                    var hasGotWeixinUserInfo = false;
+                    var isCommentRequireWeixinAccountVerify = false;
+
+
+
+                    /***************评论相关：开始***************/
+                    //发表评论（主贴）
+                    $(function () {
+                        //默认nickname
+                        if ($.cookie("Vote.CommentNickname")!=null && $.cookie("Vote.CommentNickname")!='') {
+                            $('#tbNickname').val($.cookie("Vote.CommentNickname"));
+                        }
+
+                        //隐藏微信昵称
+                        $(function () {
+                            $("#cbHideWeixinInfo").click(function () {
+                                if ($(this).prop('checked')) {
+                                    $('#pnlSenderWeixinInfo').hide();
+                                    $('#tbNickname').show();
+                                }
+                                else {
+                                    $('#pnlSenderWeixinInfo').show();
+                                    $('#tbNickname').hide();
+                                }
+                            });
+                        });
+
+
+                        $("#btnPostComment").click(function () {
+                            var content=$('#tbCommentContent').val();
+                            var face=$('#hiddenFace').val();
+                            var subjectID=2768441;
+                            var from="Subject";
+                            var optionID=0;
+                            var weixinNickname;
+                            var weixinHeadImgUrl;
+                            var weixinHeadImgSmallUrl;
+                            var showNickname;
+                            var nickname;
+
+                            if ($('#tbNickname:visible').length==1) { //不用微信信息
+                                nickname = $('#tbNickname').val();
+                                if (nickname=='') {
+                                    alert('请填写昵称！');
+                                    return;
+                                }
+                                showNickname=nickname;
+                                weixinHeadImgSmallUrl='';
+                                weixinNickname='';
+                                weixinHeadImgUrl='';
+                            }
+                            else {
+                                nickname='';
+                                weixinNickname = $('#hiddenWeixinNickname').val();
+                                weixinHeadImgUrl = $('#hiddenWeixinHeadImgUrl').val();
+                                weixinHeadImgSmallUrl = $('#hiddenWeixinHeadImgSmallUrl').val();
+                                showNickname=weixinNickname;
+                            }
+
+                            if (content=='') {
+                                alert('请填写评论内容！');
+                                return;
+                            }
+
+                            $.post("/Front/Ajax/GetPostComment.ashx", {
+                                Content:content,
+                                Nickname: nickname,
+                                WeixinNickname : weixinNickname,
+                                WeixinHeadImgUrl : weixinHeadImgUrl,
+                                Face:face,
+                                SubjectID:subjectID,
+                                OptionID:optionID,
+                                Action:'Root',
+                                From:from
+                            },function(data){
+                                var result = Boolean(data.Result);
+                                var returnMessage = data.ReturnMessage.toString();
+                                if (result) {
+                                    insertComment(face,showNickname,weixinHeadImgSmallUrl,content);
+                                    if (nickname!='') {
+                                        $.cookie('Vote.CommentNickname', nickname, { expires: 30, path:'/' });
+                                    }
+                                    $('#tbCommentContent').val('');
+                                    alert('评论发表成功！');
+                                }
+                                else {
+                                    alert(returnMessage);
+                                }
+                            },"json");
+                        });
+                    });
+
+                    //评论回复功能相关
+                    $(function () {
+
+                        //隐藏回复人的微信昵称
+                        $(".PostReplyWrapper input:checkbox").live('change', function() {
+                            if ($(this).prop('checked')) {
+                                $(this).closest('.PostReplyWrapper').find('.ReplySenderWeixinInfo').hide();
+                                $(this).closest('.PostReplyWrapper').find('input.ReplyNickname').show();
+                            }
+                            else {
+                                $(this).closest('.PostReplyWrapper').find('.ReplySenderWeixinInfo').show();
+                                $(this).closest('.PostReplyWrapper').find('input.ReplyNickname').hide();
+                            }
+                        });
+
+
+                        //弹出回复框
+                        $(".CommentReply").click(function () {
+                            var weixinInfo;
+                            var nicknameInput;
+                            var hideWeixinNicknameCheckbox='';
+
+                            if (hasGotWeixinUserInfo) {
+                                var weixinHeadImgSmallUrl = $('#hiddenWeixinHeadImgSmallUrl').val();
+                                var weixinNickname = $('#hiddenWeixinNickname').val();
+
+                                if (!isCommentRequireWeixinAccountVerify) {
+                                    hideWeixinNicknameCheckbox = '<label><input type="checkbox" />发表评论时隐藏微信昵称</label>';
+                                }
+
+                                weixinInfo = '<div class="ReplySenderWeixinInfo"><img src="'+weixinHeadImgSmallUrl+'" class="WeixinHead" /><span>'+weixinNickname+'</span>：</div>';
+                                nicknameInput='<input type="text" placeholder="昵称" class="ReplyNickname" data-mini="true" style="display:none;" />';
+                            }
+                            else {
+                                weixinInfo='';
+                                nicknameInput='<input type="text" placeholder="昵称" class="ReplyNickname" data-mini="true" />';
+                            }
+
+                            $('.CommentRootItem .PostReplyWrapper').remove();
+                            var $postReplyWrapper=$('<div class="PostReplyWrapper">' + weixinInfo + nicknameInput + '<input type="text" placeholder="回复内容..." class="ReplyContent" data-mini="true" />' + hideWeixinNicknameCheckbox + '<input type="button" value="回复" class="SendReply ButtonGray" data-mini="true" /></div>');
+                            $(this).closest(".Content").append($postReplyWrapper).trigger('create');
+
+                            if ($.cookie("Vote.CommentNickname")!=null && $.cookie("Vote.CommentNickname")!='') {
+                                $(this).closest(".Content").find(".ReplyNickname").val($.cookie("Vote.CommentNickname"));
+                            }
+                        });
+
+
+
+
+
+                        //发送回复数据
+                        $(".PostReplyWrapper .SendReply").live('click', function() {
+                            var content = $(this).closest(".PostReplyWrapper").find(".ReplyContent").val();
+                            var rootID = $(this).closest(".Content").attr("commentid");
+                            var subjectID=2768441;
+                            var $rootItem=$(this).closest(".CommentRootItem");
+                            var from="Subject";
+                            var optionID=0;
+                            var weixinNickname;
+                            var weixinHeadImgUrl;
+                            var weixinHeadImgSmallUrl;
+
+                            var showNickname;
+                            var nickname;
+                            if ($(this).closest(".PostReplyWrapper").find(".ReplyNickname:visible").length==1) { //不用微信信息
+                                nickname = $(this).closest(".PostReplyWrapper").find(".ReplyNickname").val();
+                                if (nickname=='') {
+                                    alert('请填写昵称！');
+                                    return;
+                                }
+                                showNickname=nickname;
+                                weixinHeadImgSmallUrl='';
+                                weixinNickname='';
+                                weixinHeadImgUrl='';
+                            }
+                            else {
+                                nickname='';
+                                weixinNickname = $('#hiddenWeixinNickname').val();
+                                weixinHeadImgUrl = $('#hiddenWeixinHeadImgUrl').val();
+                                weixinHeadImgSmallUrl = $('#hiddenWeixinHeadImgSmallUrl').val();
+                                showNickname=weixinNickname;
+                            }
+
+                            if (content=='回复内容...') {
+                                alert('请填写回复内容。');
+                                return;
+                            }
+
+                            if (nickname=='昵称') {
+                                alert('请填写昵称。');
+                                return;
+                            }
+
+                            $.post("/Front/Ajax/GetPostComment.ashx", {
+                                Content:content,
+                                Nickname: nickname,
+                                WeixinNickname : weixinNickname,
+                                WeixinHeadImgUrl : weixinHeadImgUrl,
+                                SubjectID:subjectID,
+                                OptionID:optionID,
+                                RootID:rootID,
+                                Action:'Reply',
+                                From:from
+                            },function(data){
+                                var result = Boolean(data.Result);
+                                var returnMessage = data.ReturnMessage.toString();
+                                if (result) {
+                                    insertCommentReply($rootItem,showNickname,weixinHeadImgSmallUrl,content);
+                                    if (nickname!='') {
+                                        $.cookie('Vote.CommentNickname', nickname, { expires: 30, path:'/' });
+                                    }
+                                    $rootItem.find('input.ReplyContent').val('');
+                                    alert('回复评论成功！');
+                                }
+                                else {
+                                    alert(returnMessage);
+                                }
+                            },"json");
+                        });
+                    });
+
+
+
+
+
+
+                    //插入主贴
+                    function insertComment(face,showNickname,weixinHeadImgSmallUrl,content) {
+                        var headImg='';
+                        if (weixinHeadImgSmallUrl!='') {
+                            headImg='<img src="'+weixinHeadImgSmallUrl+'" class="WeixinHead" />';
+                        }
+                        var $li=$('<li><div class="Face Face_' + face.toString()+'"></div><div class="Content">'+headImg+'<span class="Nickname"></span>： <span class="CommentContent"></span><span class="PostDatetime">（刚刚）</span></div></li>');
+                        $li.find('.Nickname').text(showNickname);
+                        $li.find('.CommentContent').text(content);
+                        $('.CommentList > ul').prepend($li);
+                        $('.CommentList > ul').listview('refresh');
+                    }
+
+
+                    //插入回复
+                    function insertCommentReply($rootItem,showNickname,weixinHeadImgSmallUrl,content) {
+                        var headImg='';
+                        if (weixinHeadImgSmallUrl!='') {
+                            headImg='<img src="'+weixinHeadImgSmallUrl+'" class="WeixinHead" />';
+                        }
+                        var $li=$('<li class="CommentReplyItem">'+headImg+'<span class="Nickname"></span>： <span class="CommentContent"></span><span class="PostDatetime">（刚刚）</span></li>');
+                        $li.find('.Nickname').text(showNickname);
+                        $li.find('.CommentContent').text(content);
+                        if ($rootItem.find(".ReplyList").length==0) {
+                            $rootItem.append($('<div class="ReplyList"><ul></ul></div>'));
+                        }
+                        $rootItem.find(".ReplyList ul").prepend($li);
+                        $rootItem.find(".PostReplyWrapper").remove();
+
+                    }
+
+                    //点击弹出必须微信验证的提示链接
+                    $(function () {
+                        $("#btnPostCommentFake").click(function () {
+                            $('#pnlCommentNeedWeixinVerify span').show();
+                        });
+                    });
+                    /***************评论相关：结束***************/
+
+                </script>
+
+
+
+
+
+                <a name="Comment"></a>
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <input type="hidden" name="ctl00$content$hiddenRefererUrl" id="content_hiddenRefererUrl" />
+            <input type="hidden" name="ctl00$content$hiddenTimeStampEncodeString" id="content_hiddenTimeStampEncodeString" value="1476435209,a3b5c26aad885f3677f8f3d683c10ee8" />
+            <input type="hidden" name="ctl00$content$hiddenLatitude" id="hiddenLatitude" />
+            <input type="hidden" name="ctl00$content$hiddenLongitude" id="hiddenLongitude" />
+            <input type="hidden" name="ctl00$content$hiddenGeoLocationEncode" id="hiddenGeoLocationEncode" />
+
+
+
+        </div>
+
+
+
+
+
+
+        <div id="footer_ucMenu_pnlMenuWrapper" class="MenuWrapper" data-role="footer" data-position="fixed">
+
+            <div id="footer_ucMenu_pnlMenu" data-role="navbar">
+
+                <ul>
+                    <li id="footer_ucMenu_liHome">
+                        <a id="footer_ucMenu_hplHome" data-ajax="false" data-icon="home" href="http://y46nn7.v.vote8.cn/m">首页</a></li>
+                    <li id="footer_ucMenu_liRank">
+                        <a id="footer_ucMenu_hplRank" data-ajax="false" data-icon="star" href="http://y46nn7.v.vote8.cn/m/Rank">排名</a></li>
+
+
+
+
+
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+        <div id="footer_ucBottom_pnlMobileBottom" class="MobileBottom" data-role="footer">
+
+            <div id="footer_ucBottom_pnlMobileCopyright" class="MobileCopyright">
+
+
+                <p>投票平台使用“投票吧”构建</p>
+                <p>
+                    免费创建投票 <a href="http://www.vote8.cn" target="_blank">www.vote8.cn</a>
+                </p>
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+        <div class="InvisibleCounter">
+
+            <script src="http://s5.cnzz.com/stat.php?id=5855278&web_id=5855278" language="JavaScript"></script>
+
+        </div>
+
+
+
+
+
+        <div data-role="popup" id="popupDialog">
+            <div data-role="header">
+                <h1>提示信息</h1>
+            </div>
+            <div data-role="content">
+                <p></p>
+                <a href="#" data-role="button" data-rel="back" data-mini="true">确 认</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function() { $('.OptionList[topicid=2737607] .OptionImageWrapper img').lazyload({threshold:200,load:function(){doImageWaterfall(2737607);}}); });//]]>
+    </script>
+</form>
+</body>
+</html>
