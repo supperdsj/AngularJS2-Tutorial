@@ -1,3 +1,22 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10">
+      <h1>Hello World!</h1>
+      <hr>
+      <!--<a href="/">Home</a>-->
+      <!--<a href="/user">User</a>-->
+      <!--<a href="/user">User</a>-->
+      <div routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+        <a [routerLink]="['/']">Home</a>
+      </div>
+      <a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a> |
+      <input type="text" #id (input)="0"> <!-- 绑定了input事件没做任何事以更新数据绑定关系 -->
+      <a [routerLink]="['/user',id.value]" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">User</a>|
+      <a [routerLink]="['/']" [queryParams]="{analytics:500}">Home with params</a>|
+      <a [routerLink]="['/']" [fragment]="'section2'">Home with fragment</a>|
+      <a [routerLink]="['user',0]" [preserveQueryParams]="true">User preserveQueryParams</a>
+      <hr>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+.active {
+  color: red;
+}
+
+div.active {
+  border: 1px solid red;
+}
