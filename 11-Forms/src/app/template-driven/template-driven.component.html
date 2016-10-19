@@ -1,0 +1,33 @@
+<h1>Template Driven</h1>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div ngModelGroup="userData">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text"
+             class="form-control" id="username" [(ngModel)]="user.username" name="username" required>
+      <!--id="username" ngModel="user.username" name="username" required>只对引用绑定-->
+      <!--id="username" [ngModel]="user.username" name="username" required>只读绑定-->
+    </div>
+    <div class="form-group">
+      <label for="email">E-Mail</label>
+      <input type="text"
+             class="form-control"
+             id="email" [(ngModel)]="user.email" name="email" required pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" #email="ngModel">
+      <div *ngIf="!email.valid">
+        Invalid email!
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password"
+           class="form-control"
+           id="password" [(ngModel)]="user.password" name="password" required>
+  </div>
+  <div class="radio" *ngFor="let g of genders">
+    <label>
+      <input type="radio" name="gender" [(ngModel)]="user.gender" [value]="g">{{g}}
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
