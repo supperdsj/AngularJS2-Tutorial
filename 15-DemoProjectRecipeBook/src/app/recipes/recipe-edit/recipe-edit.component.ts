@@ -27,7 +27,7 @@ export class RecipeEditComponent implements OnInit,OnDestroy {
     let recipeIngredients: FormArray = new FormArray([]);
 
     if (!this.isNew) {
-      for (let i = 0; i < this.recipe.ingredient.length; i++) {
+      for (let i = 0; this.recipe.ingredient && i < this.recipe.ingredient.length; i++) {
         recipeIngredients.push(
           new FormGroup({
             name: new FormControl(this.recipe.ingredient[i].name, Validators.required),
