@@ -1,3 +1,14 @@
-<h1>
-  {{title}}
-</h1>
+<label for="username">Username</label>
+<input type="text" id="username" #username>
+<label for="email">Email</label>
+<input type="text" id="email" #email>
+<button (click)="onSubmit(username.value,email.value)">Submit</button>
+<hr>
+<button (click)="onGetData()">Get Data</button>
+<ul>
+  <li *ngFor="let item of items">
+    {{item.username}}
+  </li>
+</ul>
+<hr>
+<p>{{asyncString | async}}</p>
