@@ -10,7 +10,7 @@ import {FormArray, FormGroup, FormControl, Validators, FormBuilder} from "@angul
   templateUrl: './recipe-edit.component.html',
   styleUrls: ['./recipe-edit.component.css']
 })
-export class RecipeEditComponent implements OnInit,OnDestroy {
+export class RecipeEditComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private recipeIndex: number;
   private recipe: Recipe;
@@ -33,7 +33,7 @@ export class RecipeEditComponent implements OnInit,OnDestroy {
             name: new FormControl(this.recipe.ingredient[i].name, Validators.required),
             amount: new FormControl(this.recipe.ingredient[i].amount, [Validators.required, Validators.pattern('\\d+')])
           })
-        )
+        );
       }
       recipeName = this.recipe.name;
       recipeImageUrl = this.recipe.imagePath;
