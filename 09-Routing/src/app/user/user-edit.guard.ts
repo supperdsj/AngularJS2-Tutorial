@@ -4,7 +4,7 @@ import {Observable} from "rxjs";
 export interface ComponentCanDeactivate{
   canDeactivate:()=> Observable<boolean>|boolean;
 }
-export class UserEditGuard implements  CanDeactivate<ComponentCanDeactivate>{
+export class UserEditGuard implements CanDeactivate<ComponentCanDeactivate>{
   canDeactivate(component:ComponentCanDeactivate): Observable<boolean>|boolean {
     console.log(component);
     // console.log(route);
