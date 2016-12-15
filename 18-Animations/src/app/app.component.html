@@ -2,10 +2,15 @@
   <div class="row">
     <div class="col-xs-12">
       <h1>Animations</h1>
-      <button class="btn btn-primary">Animate!</button>
-      <button class="btn btn-primary">Shrink!</button>
+      <button class="btn btn-primary" (click)="onAnimate()">Animate!</button>
+      <button class="btn btn-primary" (click)="onShrink()">Shrink!</button>
       <hr>
-      <div></div>
+      <div [@divState]="state" style="width: 100px; height: 100px"
+           (@divState.start)="animationStart($event)"
+           (@divState.done)="animationDone($event)"
+      ></div>
+      <br>
+      <div [@wildState]="wildState" style="width: 100px; height: 100px"></div>
     </div>
   </div>
   <hr>
@@ -15,10 +20,19 @@
       <button class="btn btn-primary" (click)="onAdd(input.value)">Add Item!</button>
       <hr>
       <ul class="list-group">
-        <li
-          class="list-group-item"
-          (click)="onDelete(item)"
-          *ngFor="let item of list">
+        <li class="list-group-item" (click)="onDelete(item)" *ngFor="let item of list" [@listOne] >
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <input type="text" #input>
+      <button class="btn btn-primary" (click)="onAdd(input.value)">Add Item!</button>
+      <hr>
+      <ul class="list-group">
+        <li class="list-group-item" (click)="onDelete(item)" *ngFor="let item of list" [@listTwo] >
           {{ item }}
         </li>
       </ul>
