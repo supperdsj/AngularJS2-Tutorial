@@ -56,7 +56,7 @@ import {
       transition('* => void', [
         animate(300, style({
           opacity: 0,
-          transform: 'translateX(100px)'
+          transform: 'translateX(10ng 0px)'
         }))
       ])
     ]),
